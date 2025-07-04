@@ -1,0 +1,26 @@
+
+
+
+
+
+<ul class="wishList" *ngIf="items.length !== 0; else noItems">
+  <li class="wishItem" *ngFor="let item of items">
+    <label class="checkboxContainer">
+      <input type="checkbox" [checked]="item.isCompleted" (click)="toggleItem(item)" />
+      <span class="customCheckbox"></span>
+      {{ item.text }}
+    </label>
+
+    <p class="status" *ngIf="typeof item.isCompleted === 'boolean'; else noStatus">
+      Status: {{ item.isCompleted ? 'Completed' : 'Not Completed' }}
+    </p>
+
+    <ng-template #noStatus>
+      <p class="status unknown">Status: Unknown</p>
+    </ng-template>
+  </li>
+</ul>
+
+<ng-template #noItems>
+  <p class="noItemsTemp">No items available</p>
+</ng-template>

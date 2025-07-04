@@ -1,0 +1,24 @@
+<div class="mainContainer">
+
+  <div class="formContainer">
+    <form (submit)="addItem()">
+      <input type="text"
+             placeholder="Enter new wishlist item"
+             [(ngModel)]="newItemText"
+             name="wishText"
+             required />
+      <button type="submit">Add</button>
+      <div class="filterContainer">
+        <span class="filterIcon">📋</span>
+        <select class="filterSelect" [(ngModel)]="filterStatus" name="filterStatus">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="notCompleted">Not Completed</option>
+        </select>
+      </div>
+    </form>
+  </div>
+  <app-wish-list [items]="filteredItems"></app-wish-list>
+
+
+</div>

@@ -1,0 +1,101 @@
+/* Main container */
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Form container styling */
+.formContainer {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+  .formContainer form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .formContainer input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 70%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  .formContainer button {
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #1976d2;
+    color: white;
+    cursor: pointer;
+  }
+
+    .formContainer button:hover {
+      background-color: #1565c0;
+    }
+
+
+
+@media (max-width: 600px) {
+  .formContainer form {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .formContainer input[type="text"],
+  .formContainer button {
+    width: 90%;
+    max-width: none;
+  }
+
+  .wishItem {
+    font-size: 16px;
+  }
+}
+
+.filterContainer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: 8px;
+}
+
+.filterIcon {
+  font-size: 18px;
+}
+
+.filterSelect {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  background-color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .filterContainer {
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .formContainer form {
+    align-items: stretch;
+  }
+
+  .filterSelect {
+    width: 100%;
+  }
+}
