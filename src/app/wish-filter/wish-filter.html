@@ -1,0 +1,12 @@
+
+
+
+
+<div class="filterContainer">
+  <span class="filterIcon">📋</span>
+  <select class="filterSelect" [(ngModel)]="selectedFilter" (change)="onFilterChange()">
+    <option value="all">All</option>
+    <option value="completed">Completed</option>
+    <option value="notCompleted">Not Completed</option>
+  </select>
+</div>

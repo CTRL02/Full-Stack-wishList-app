@@ -1,0 +1,13 @@
+
+
+
+<div class="formContainer">
+  <form (submit)="addItemEvent()">
+    <input type="text"
+           placeholder="Enter new wishlist item"
+           [(ngModel)]="newItemText"
+           name="wishText"
+           required />
+    <button type="submit">Add</button>
+  </form>
+</div>

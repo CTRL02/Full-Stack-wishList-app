@@ -1,0 +1,35 @@
+/* ===============================
+   Filter Container
+================================== */
+
+.filterIcon {
+  font-size: 18px;
+}
+
+/* Filter select styling */
+.filterSelect {
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  min-width: 150px;
+  box-sizing: border-box;
+  appearance: none; /* cleaner look on mobile */
+  flex: 1; /* Makes it responsive inside flex container */
+}
+
+/* Mobile tweaks */
+@media (max-width: 600px) {
+
+
+
+  .filterSelect {
+    width: 100%;
+  }
+
+  .filterIcon {
+    margin-bottom: 4px;
+  }
+}

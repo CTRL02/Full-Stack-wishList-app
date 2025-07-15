@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import {WishItem} from "../../modules/WishItem";
 import { FormsModule } from '@angular/forms';
-
+import { EventBusService } from '../../Services/EventBusService';
+import { Subscription } from 'rxjs';
+import { Wishtlist } from './wishtlist';
+import { ErrorService } from './Services/ErrorService';
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
@@ -9,14 +12,31 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './app.css'
 })
 export class App {
-    items: WishItem[] = [
-    new WishItem('Learn Angular'),
-    new WishItem('Learn React', false),
-    new WishItem('Learn Vue', false),
-    new WishItem('Learn Svelte', true),
-    new WishItem('Learn Web Components', true)
-  ];
+  items: WishItem[] = [];
   filterStatus: string = 'all';
+  private subscription: Subscription[] = [];
+  errorMessage: string | null = null;
+
+  constructor(private eventBus: EventBusService , private wishList: Wishtlist , private errorService: ErrorService) { }
+
+  ngOnInit(): void {
+    this.subscription.push(this.wishList.getWishList().subscribe(data => this.items = data));
+
+    this.subscription.push(
+      this.errorService.error$.subscribe(message => {
+        this.errorMessage = message;
+      })
+    );
+
+
+    this.subscription.push(this.eventBus.deleteItem$.subscribe((itemToDelete) => {
+    this.items = this.items.filter(item => item !== itemToDelete);
+    }));
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.forEach(sub => sub.unsubscribe());
+  }
   get filteredItems(): WishItem[] {
 
   if (this.filterStatus === 'completed') {
@@ -30,18 +50,11 @@ export class App {
 
 
 };
-  newItemText: string ='';
   protected title = 'AngularProject1';
 
 
  
 
-  addItem():void {
-    if (this.newItemText.trim()) {
-      this.items.push(new WishItem(this.newItemText.trim()));
-      this.newItemText = '';
-    }
-    console.log(this.items);
-  }
+ 
  
 }

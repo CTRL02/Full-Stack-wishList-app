@@ -3,10 +3,10 @@
   "compilerOptions": {
     "target": "ES2022",
     "module": "ESNext",
-    "moduleResolution": "node", // ✅ Crucial fix for import resolution
+    "moduleResolution": "node",
     "importHelpers": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true, // Optional, but good with Angular
+    "emitDecoratorMetadata": true, 
     "skipLibCheck": true,
     "strict": true,
     "noImplicitAny": true,
