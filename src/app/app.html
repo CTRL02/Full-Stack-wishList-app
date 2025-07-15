@@ -1,12 +1,13 @@
+
+
 <div class="mainContainer">
 
-  <app-add-wish-form (addItem)="items.push($event)"></app-add-wish-form>
 
 
 
 
-  <app-wish-filter (filterChange)="filterStatus = $event">
-  </app-wish-filter>
+
+  <app-wish></app-wish>
 
   <div *ngIf="errorMessage" class="error">
     {{ errorMessage }}
@@ -15,7 +16,13 @@
 
 
 
-  <app-wish-list [items]="filteredItems"></app-wish-list>
+
+
+
+
 
 
 </div>
+
+<app-contact></app-contact>
+

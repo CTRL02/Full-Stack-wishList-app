@@ -1,5 +1,5 @@
 import { Component, input, Output, EventEmitter } from '@angular/core';
-import { WishItem } from '../../../modules/WishItem';
+import { WishItem } from '../../../../modules/WishItem';
 @Component({
   selector: 'app-add-wish-form',
   standalone: false,

@@ -1,29 +1,26 @@
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; 
+
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
-import { WishList } from './wish-list/wish-list';
-import { AddWishForm } from './add-wish-form/add-wish-form';
-import { WishFilter } from './wish-filter/wish-filter';
-import { HttpClientModule } from '@angular/common/http';
+
 import { HttpErrorInterceptor } from './Services/HttpErrorInterceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { WishModule } from './wish/wish-module';
+import { ContactModule } from './contact/contact-module';
 
 
 
 @NgModule({
   declarations: [
-    App,
-    WishList,
-    AddWishForm,
-    WishFilter
+    App
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    HttpClientModule
+    WishModule,
+    ContactModule
+
   ],
   providers: [
     {

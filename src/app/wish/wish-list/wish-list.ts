@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { WishItem } from '../../../modules/WishItem';
-import { EventBusService } from '../../../Services/EventBusService';
+import { WishItem } from '../../../../modules/WishItem';
+import { EventBusService } from '../../../../Services/EventBusService';
 
 @Component({
   selector: 'app-wish-list',

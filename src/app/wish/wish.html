@@ -1,0 +1,17 @@
+
+
+  <app-add-wish-form (addItem)="items.push($event)"></app-add-wish-form>
+
+
+
+
+  <app-wish-filter (filterChange)="filterStatus = $event">
+  </app-wish-filter>
+
+
+
+
+
+  <app-wish-list [items]="filteredItems"></app-wish-list>
+
+
