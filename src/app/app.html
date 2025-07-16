@@ -1,28 +1,13 @@
+<div class="page-wrapper">
+  <app-nav-menu></app-nav-menu>
 
+  <main class="mainContainer">
+    <div *ngIf="errorMessage" class="error">
+      {{ errorMessage }}
+    </div>
 
-<div class="mainContainer">
+    <router-outlet></router-outlet>
+  </main>
 
-
-
-
-
-
-  <app-wish></app-wish>
-
-  <div *ngIf="errorMessage" class="error">
-    {{ errorMessage }}
-  </div>
-
-
-
-
-
-
-
-
-
-
+  <app-contact></app-contact>
 </div>
-
-<app-contact></app-contact>
-

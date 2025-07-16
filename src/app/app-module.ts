@@ -8,18 +8,23 @@ import { HttpErrorInterceptor } from './Services/HttpErrorInterceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { WishModule } from './wish/wish-module';
 import { ContactModule } from './contact/contact-module';
-
+import { NavMenuModule } from './nav-menu/nav-menu-module';
+import { RandomModule } from './random/random-module';
+import { NotFound } from './not-found/not-found';
 
 
 @NgModule({
   declarations: [
-    App
+    App,
+    NotFound
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     WishModule,
-    ContactModule
+    ContactModule,
+    NavMenuModule,
+    RandomModule
 
   ],
   providers: [

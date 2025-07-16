@@ -1,0 +1,48 @@
+/* Navbar Container */
+.navbar {
+  background: linear-gradient(to right, #000000, #333333); /* Black to dark grey */
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #444;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-radius: 0 0 20px 20px; /* Rounded bottom corners */
+  margin: 0 1rem; /* Optional: add horizontal margin to emphasize rounded edges */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Optional: visual lift */
+}
+
+/* Inner layout */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo or app name */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f0f0f0;
+}
+
+/* Button container */
+.navbar-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Buttons / links */
+.nav-button {
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 25px;
+  background-color: #e0e0e0; /* Light button to contrast dark background */
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+  .nav-button:hover {
+    background-color: #ffffff;
+  }
